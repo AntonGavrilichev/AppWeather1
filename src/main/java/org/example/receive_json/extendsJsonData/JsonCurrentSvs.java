@@ -45,10 +45,10 @@ public class JsonCurrentSvs extends JsonData {
         jsonSpecific = json.getJSONObject("sys");
         this.sunset = ReceiveDateTime.getSunEventSvs(jsonSpecific.getLong("sunset"));
 
-        data.append(this.temp).append("\n\n");
-        data.append(this.desc).append("\n\n");
-        data.append(this.wind).append("\n\n");
-        data.append("Восход: ").append(this.sunrise).append("\n\n");
+        data.append(this.temp).append("\n");
+        data.append(this.desc).append("\n");
+        data.append(this.wind).append("\n");
+        data.append("Восход: ").append(this.sunrise).append("\n");
         data.append("Закат: ").append(this.sunset);
 
         return data.toString();

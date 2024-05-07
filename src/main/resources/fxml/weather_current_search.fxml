@@ -5,21 +5,21 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="392.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.ControllerCurrentSearch">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="406.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.ControllerCurrentSearch">
    <children>
-      <ImageView fitHeight="458.0" fitWidth="542.0" layoutX="-60.0" layoutY="-4.0" pickOnBounds="true">
+      <ImageView fitHeight="552.0" fitWidth="413.0" pickOnBounds="true">
          <image>
-            <Image url="@../img/100_stars.png" />
+            <Image url="@../img/scale_1200 (2).png" />
          </image>
       </ImageView>
       <AnchorPane layoutX="-3.0" layoutY="4.0" prefHeight="108.0" prefWidth="399.0">
          <children>
-            <Button fx:id="toReturn" layoutX="19.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="&lt;&lt; назад" textFill="#433065">
+            <Button fx:id="toReturn" layoutX="19.0" layoutY="16.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="79.0" text="МЕНЮ">
                <font>
                   <Font name="Times New Roman Bold" size="11.0" />
                </font>
             </Button>
-            <Button fx:id="help" layoutX="303.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="помощь" textFill="#433065">
+            <Button fx:id="help" layoutX="303.0" layoutY="16.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="79.0" text="ПОМОЩЬ">
                <font>
                   <Font name="Times New Roman Bold" size="11.0" />
                </font>
@@ -31,30 +31,41 @@
             </Text>
          </children>
       </AnchorPane>
-      <TextField fx:id="cityName" alignment="CENTER" cache="true" layoutX="70.0" layoutY="112.0" prefHeight="36.0" prefWidth="252.0" style="-fx-background-color: value0; -fx-border-color: #dedeea; -fx-text-fill: #f1e9e9;">
+      <TextField fx:id="cityName" alignment="CENTER" cache="true" layoutX="64.0" layoutY="140.0" prefHeight="36.0" prefWidth="270.0" promptText="Введите город" style="-fx-background-color: #FFFFFF; -fx-border-color: #000000; -fx-text-fill: #000000;">
          <font>
             <Font name="Times New Roman Bold" size="18.0" />
          </font>
       </TextField>
-      <Button fx:id="getWeather" layoutX="70.0" layoutY="173.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="116.0" text="узнать погоду" textFill="#433065">
+      <Button fx:id="getWeather" layoutX="218.0" layoutY="195.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="116.0" text="УЗНАТЬ ПОГОДУ">
          <font>
-            <Font name="Times New Roman Bold" size="15.0" />
+            <Font name="Times New Roman Bold" size="10.0" />
          </font>
       </Button>
-      <Button fx:id="clear" layoutX="211.0" layoutY="173.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="116.0" text="очистить" textFill="#433065">
+      <Button fx:id="clear" layoutX="64.0" layoutY="195.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="116.0" text="ОЧИСТИТЬ">
          <font>
-            <Font name="Times New Roman Bold" size="15.0" />
+            <Font name="Times New Roman Bold" size="10.0" />
          </font>
       </Button>
-      <VBox layoutX="14.0" layoutY="207.0" prefHeight="236.0" prefWidth="366.0">
+      <VBox layoutX="21.0" layoutY="288.0" prefHeight="236.0" prefWidth="337.0">
          <children>
             <Text fx:id="weatherInfo" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="364.13671875">
                <font>
-                  <Font name="Times New Roman Bold" size="18.0" />
+                  <Font name="Garamond Bold" size="24.0" />
                </font>
             </Text>
             <Pane prefHeight="200.0" prefWidth="200.0" />
+   <!--            <Pane prefHeight="291.0" prefWidth="366.0" />-->
          </children>
       </VBox>
+      <Text fx:id="currentTime" fill="WHITE" layoutX="254.0" layoutY="516.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="137.13671875">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="currentDate" fill="WHITE" layoutX="14.0" layoutY="517.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="137.13671875">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

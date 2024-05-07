@@ -41,6 +41,7 @@ public class ControllerCurrentSearch {
     @FXML
     private Button help;
 
+
     @FXML
     void initialize() {
 
@@ -118,4 +119,5 @@ public class ControllerCurrentSearch {
         weatherInfo.setText("");
 
     }
+
 }
