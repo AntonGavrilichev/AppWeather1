@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="406.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.ControllerStart">
+   <children>
+      <ImageView fitHeight="552.0" fitWidth="413.0" layoutX="-1.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/scale_1200.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutY="-1.0" prefHeight="135.0" prefWidth="406.0">
+         <children>
+            <Text layoutX="32.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ЧТО ЗА ОКНОМ?" textAlignment="CENTER" wrappingWidth="342.9999694824219">
+               <font>
+                  <Font name="Garamond Bold" size="41.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Button fx:id="getSvs" layoutX="254.0" layoutY="175.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="137.0" text="В СЕВАСТОПОЛЕ" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="getWorld" layoutX="14.0" layoutY="175.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="137.0" text="В МИРЕ" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman Bold" size="11.0" />
+         </font>
+      </Button>
+      <Button fx:id="getForecast" layoutX="135.0" layoutY="339.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="137.0" text="ПРОГНОЗ НА 5 ДНЕЙ" textAlignment="CENTER" textFill="#845125">
+         <font>
+            <Font name="Times New Roman Bold" size="11.0" />
+         </font>
+      </Button>
+      <Text fx:id="currentTime" fill="WHITE" layoutX="254.0" layoutY="516.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="137.13671875">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="currentDate" fill="WHITE" layoutX="14.0" layoutY="517.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="137.13671875">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

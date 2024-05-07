@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="392.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.ControllerCurrentSearch">
+   <children>
+      <ImageView fitHeight="458.0" fitWidth="542.0" layoutX="-60.0" layoutY="-4.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/100_stars.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="-3.0" layoutY="4.0" prefHeight="108.0" prefWidth="399.0">
+         <children>
+            <Button fx:id="toReturn" layoutX="19.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="&lt;&lt; назад" textFill="#433065">
+               <font>
+                  <Font name="Times New Roman Bold" size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="help" layoutX="303.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="помощь" textFill="#433065">
+               <font>
+                  <Font name="Times New Roman Bold" size="11.0" />
+               </font>
+            </Button>
+            <Text fx:id="exceptionField" fill="#d70000" layoutX="43.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="337.13671875">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="cityName" alignment="CENTER" cache="true" layoutX="70.0" layoutY="112.0" prefHeight="36.0" prefWidth="252.0" style="-fx-background-color: value0; -fx-border-color: #dedeea; -fx-text-fill: #f1e9e9;">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </TextField>
+      <Button fx:id="getWeather" layoutX="70.0" layoutY="173.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="116.0" text="узнать погоду" textFill="#433065">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="clear" layoutX="211.0" layoutY="173.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="116.0" text="очистить" textFill="#433065">
+         <font>
+            <Font name="Times New Roman Bold" size="15.0" />
+         </font>
+      </Button>
+      <VBox layoutX="14.0" layoutY="207.0" prefHeight="236.0" prefWidth="366.0">
+         <children>
+            <Text fx:id="weatherInfo" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="364.13671875">
+               <font>
+                  <Font name="Times New Roman Bold" size="18.0" />
+               </font>
+            </Text>
+            <Pane prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
