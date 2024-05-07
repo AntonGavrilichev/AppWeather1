@@ -41,9 +41,7 @@ public class ReceiveDateTime {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-
         return oldDateTime;
     }
-
 
 }

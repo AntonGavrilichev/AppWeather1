@@ -33,11 +33,11 @@ public class JsonForecast extends JsonData {
 
         StringBuilder data = new StringBuilder();
 
-        for (Object o : list) {
+          for (Object o : list) {
 
             JSONObject forecast = (JSONObject) o;
 
-            this.dateTime = ReceiveDateTime.formattingDateTime(forecast.get("dt_txt").toString()) + ": ";
+            this.dateTime = ReceiveDateTime.formattingDateTime(forecast.get("dt_txt").toString()) + ": \n";
 
             if (this.dateTime.contains("09:00") || this.dateTime.contains("18:00")) {
 
