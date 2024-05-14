@@ -9,7 +9,7 @@
    <children>
       <ImageView fitHeight="558.0" fitWidth="412.0" layoutY="-2.0" pickOnBounds="true">
          <image>
-            <Image url="@../img/scale_1200 (2).png" />
+            <Image url="@../img/scale_1200%20(2).png" />
          </image>
       </ImageView>
       <VBox layoutX="25.0" layoutY="277.0" prefHeight="250.0" prefWidth="358.0">
@@ -37,7 +37,7 @@
       </AnchorPane>
       <Text fx:id="dataTime" layoutX="6.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="399.0">
          <font>
-            <Font name="Garamond Bold" size="30.0" />
+            <Font name="Garamond Bold" size="24.0" />
          </font>
       </Text>
    </children>

@@ -17,74 +17,91 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import static org.example.manage.ConstParam.*;
-
+// Контроллер прогноза погоды для заданного пользователем города
 public class ControllerCurrentSearch {
 
-    JsonCurrent jsonConnect;
+    JsonCurrent jsonConnect;  //объект класса JsonCurrent
     String citySet;
     @FXML
-    private ResourceBundle resources;
+    private ResourceBundle resources;   //ресурсы
     @FXML
-    private URL location;
+    private URL location;   //местоположение
     @FXML
-    private TextField cityName;
+    private TextField cityName;  //Название города. TextField позволяет ввести пользователю одну строку
+                                //и соответственно запустить поиск по нажатию Enter
     @FXML
-    private Text exceptionField;
+    private Text exceptionField;   //Текст ошибки. Переменная Text отображает отфоррматированный текст
     @FXML
-    private Text weatherInfo;
+    private Text weatherInfo;    //Данные о погоде. Переменная Text отображает отфоррматированный текст
     @FXML
-    private Button getWeather;
+    private Button getWeather;  // Кнопка "Узнать"
     @FXML
-    private Button clear;
+    private Button clear;       //Кнопка "Очистить"
     @FXML
-    private Button toReturn;
+    private Button toReturn;       //Кнопка "Меню"
     @FXML
-    private Button help;
+    private Button help;    //Кнопка "Помощь"
 
-
+    //метод, где будут заданы значения переменных
     @FXML
     void initialize() {
 
+        //Определяем метод, который будет вызван после ввода пользователем названия города
         cityName.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ENTER) {
-                setWeatherInfo();
+                setWeatherInfo(); //Задаем данные о погоде
             }
         });
-
+        //Настраиваем кнопу "помощь".
         help.setOnAction(e -> {
             showHelp();
         });
 
+        //Определяем метод, который будет вызван после нажатия кнопки "Узнать"
         getWeather.setOnAction(e -> {
             setWeatherInfo();
         });
 
+        //Определяем метод, который будет вызван после нажатия кнопки "Меню"
         toReturn.setOnAction(e -> {
-            toReturn.getScene().getWindow().hide();
-            OpenScene.openScene("/fxml/weather_start.fxml");
+            toReturn.getScene().getWindow().hide(); //Скроем (hide()) выбранные элементы (getWindow())
+            OpenScene.openScene("/fxml/weather_start.fxml"); //Вернем стартовую страницу fxml
         });
 
+        // //Определяем метод, который будет вызван после нажатия кнопки "Очистить"
         clear.setOnAction(e -> {
-            reset();
+            reset(); //Удаляет введеный текст ( TextField cityName) в поле и выведенную погоду (Text weatherInfo)
         });
 
     }
 
+    //Метод, который выводит на экран окно справки.
     private void showHelp() {
+        //Объект класса Alert с параметром "INFORMATION"
+        //позволяет вывести на экран нашу информацию во всплывающем окне
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        //Задаем название окна информации
         alert.setTitle("Справка");
+        //Без загаловка
         alert.setHeaderText(null);
+        //Текст справки берем из публичной константы HELP класса constParam
         alert.setContentText(HELP);
+        //показать окно и жадть действия пользователя
         alert.showAndWait();
     }
 
+    //Метод вывода ошибок исполнения программы
     private void showErrors(String message) {
+        //Задаем текст ошибки с переданным параметром message
         exceptionField.setText(message);
+        //Выводим текст ошибки с эффектом меделенного появления (new FadeTransition()
+        // за 1 секунду (Duration.seconds(1))
         FadeTransition fadeIn = new FadeTransition(Duration.seconds(1), exceptionField);
         fadeIn.setToValue(1);
         fadeIn.setFromValue(0);
         fadeIn.play();
 
+        //Скрываем текст ошибки с эффектом затухания
         fadeIn.setOnFinished(event -> {
             PauseTransition pause = new PauseTransition(Duration.seconds(2));
             pause.play();
@@ -97,27 +114,32 @@ public class ControllerCurrentSearch {
         });
     }
 
+    //Метод вывода информации о погоде
     private void setWeatherInfo() {
+        //Если поле ввода города пустое, то вызовем метод вывода ошибок (showErrors)
+        //с параметром ENTER_CITY
         if (cityName.getText().equals("")) {
             showErrors(ENTER_CITY);
         } else {
-            try {
-                exceptionField.setText("");
-                this.citySet = cityName.getText().trim();
-                jsonConnect = new JsonCurrent(citySet);
+            try {                                           //Обрабатываем исключение
+                exceptionField.setText("");                     //текст ошибки задаем пустой
+                this.citySet = cityName.getText().trim();   //Задаем название городо в строковый тип \
+                                                            // с удалением лишних пробелов
+                jsonConnect = new JsonCurrent(citySet);     //Передаем в название города в качестве параметра в
+                                                            //созданный объект прогноза погоды (JsonCurrent)
+                //Задаем форматированный текст для вывода прогноза погоды на текущую дату и время
                 weatherInfo.setText("\nПогода на " + ReceiveDateTime.getCurrentTime() + " ч. " +
                         ReceiveDateTime.getCurrentDate() + ":\n" +
-                        jsonConnect.getWeatherJson());
+                        jsonConnect.getWeatherJson());// запрашиваем погоду
             } catch (Exception e) {
-                showErrors(NOT_FOUND);
+                showErrors(NOT_FOUND); //В случае ошибки, выводим надпись "Город с таким названием не найден"
             }
         }
     }
-
+    //Метод очистки полей
     private void reset() {
-        cityName.setText("");
-        weatherInfo.setText("");
+        cityName.setText("");       //Стирает название города
+        weatherInfo.setText("");    //Стирает прогноз погоды
 
     }
-
 }

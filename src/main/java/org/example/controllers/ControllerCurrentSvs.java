@@ -11,33 +11,42 @@ import org.example.receive_json.extendsJsonData.JsonCurrentSvs;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+//Контроллер прогноза погоды для Севастополя
 public class ControllerCurrentSvs {
 
+    @FXML // аннотация @FXML связывает код Java и соответствующий объект нашего макета
+    private ResourceBundle resources;  //ресурсы
     @FXML
-    private ResourceBundle resources;
+    private URL location;               //Местоположение
+    @FXML
+    private Text cityName;             //Название города
+    @FXML
+    private Text dataTime;              //Дата и Время
+    @FXML
+    private Text weatherInfo;           //Инфо по погоде
+    @FXML
+    private Button toReturn;            //Кнопка для возврата в меню
 
-    @FXML
-    private URL location;
-    @FXML
-    private Text cityName;
-    @FXML
-    private Text dataTime;
-    @FXML
-    private Text weatherInfo;
-    @FXML
-    private Button toReturn;
-
+    //Создание объекта класса JsonCurrentSvs
     JsonCurrentSvs jsonConnect = new JsonCurrentSvs();
 
+    //Инициализация значений
     @FXML
     void initialize() {
+        //Задаем название города
         cityName.setText("Севастополь");
 
+        //Задаём дату и время
         dataTime.setText(ReceiveDateTime.getCurrentDate() +
                 ", " + ReceiveDateTime.getCurrentTime());
 
+
+        //Задаем погоду в формате определенном в методе getWeatherJson()
         weatherInfo.setText(jsonConnect.getWeatherJson());
 
+
+        //Задаем параметры исполнения команды кнопки toReturn.
+        //Используем стартовый графический сценраий
         toReturn.setOnAction(e -> {
             toReturn.getScene().getWindow().hide();
             OpenScene.openScene("/fxml/weather_start.fxml");
